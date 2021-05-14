@@ -5,6 +5,8 @@ const less = require("gulp-less");
 const postcss = require("gulp-postcss");
 const autoprefixer = require("autoprefixer");
 const sync = require("browser-sync").create();
+const ghPages = require("gh-pages");
+const path = require("path");
 
 // Styles
 
@@ -56,3 +58,10 @@ const watcher = () => {
 exports.default = gulp.series(
   styles, server, watcher
 );
+
+function deploy(cb) {
+  ghPages.publish(path.join(process.cwd(), './source'), cb);
+}
+
+exports.deploy = deploy;
+
