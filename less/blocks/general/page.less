@@ -1,0 +1,26 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.page {
+  max-width: 1440px;
+  height: 100%;
+  .offset(0; 0 auto);
+  overflow-x: hidden;
+}
+
+.page__body {
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  align-content: start;
+  min-height: 100%;
+  .offset(0; 0);
+  font-family: "Open Sans", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  .typography(16px; 24px);
+  background-color: @white;
+  color: @black;
+}
